@@ -1,0 +1,32 @@
+# Rime schema
+# encoding: utf-8
+
+
+patch:
+  "menu/page_size": 7         # 候选词个数
+  "style/font_face": "Segoe UI Emoji:30:39, Segoe UI Emoji:23:23, Segoe UI Emoji:2a:2a, Segoe UI Emoji:fe0f:fe0f, Segoe UI Emoji:20e3:20e3, Microsoft YaHei, Source Han Sans SC VF, SimSun, SF Pro, Segoe UI Emoji, Noto Color Emoji"
+  switches/+:
+    - name: ascii_mode
+      reset: 1                # reset 0 的作用是當從其他輸入方案切換到本方案時，
+      states: [ 中文, 英文 ]   # 重設爲指定的狀態，而不保留在前一個方案中設定的狀態。
+    - name: simplification
+      reset: 1                # 增加這一行：默認啓用「繁→簡」轉換。
+      states: [ 漢字, 汉字 ]
+    - name: emoji_suggestion
+      states: [ "😣️","😁️"]
+      reset: 0
+
+  ascii_composer:
+    # 定义切换到西文模式的快捷键
+    switch_key:
+      Caps_Lock: commit_code  # 按下 Caps Lock 会直接上屏
+      Control_L: noop  # 按下左 Control 键不做任何操作
+      Control_R: noop  # 按下右 Control 键不做任何操作
+      Shift_L: commit_code  # 按下左 Shift 键会直接上屏
+      # Shift_R: inline_ascii  # 按下右 Shift 键会临时切换到西文模式
+      Shift_R: noop
+    good_old_caps_lock: true  # 启用经典的 Caps Lock 开启西文模式的方式
+
+  key_binder/bindings: []
+
+
