@@ -1,0 +1,38 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Mon Feb 17 17:31:38 2025"
+  rime_version: 1.11.2
+patch:
+  show_notifications: false
+  "style/color_scheme": mint_light_blue
+  "style/layout/type": horizontal            # 布局设置，效果和 style 下的设置相同：
+  show_notifications_time: 300               # 通知显示的时间，单位 ms
+  style/+:
+    font_point: 14                           # 全局字体字号
+    label_font_point: 14                     # 标签字体字号，不设定 fallback 到 font_point
+    comment_font_point: 12                   # 注释字体字号，不设定 fallback 到 font_point
+  # 设置应用默认中英文模式
+  app_options/+:
+    gvim.exe:
+      ascii_mode: true
+      vim_mode: true
+    Code.exe:
+      vim_mode: true
+    WindowsTerminal.exe:
+      vim_mode: true
+    xshell.exe:
+      vim_mode: true
+    com.microsoft.VSCode:
+      ascii_punct: true
+      vim_mode: true
+    com.vscodium:
+      ascii_punct: true
+      vim_mode: true
+    com.apple.dt.Xcode:
+      ascii_punct: true
+      vim_mode: true
+    com.googlecode.iterm2:
+      vim_mode: true
+
